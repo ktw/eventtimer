@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="**\*.glade" />
+    <EmbeddedResource Include="**\*.glade">
+      <LogicalName>%(Filename)%(Extension)</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GtkSharp" Version="3.24.24.*" />
+    <PackageReference Include="NetCoreAudio" Version="1.7.0" />
+  </ItemGroup>
+<!--
+  <ItemGroup>
+    <None Update="numbers\*">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+-->
+  <ItemGroup>
+    <None Update="sounds\*">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="numbers\0.png" LogicalName="num-0" />
+    <EmbeddedResource Include="numbers\1.png" LogicalName="num-1" />
+    <EmbeddedResource Include="numbers\2.png" LogicalName="num-2" />
+    <EmbeddedResource Include="numbers\3.png" LogicalName="num-3" />
+    <EmbeddedResource Include="numbers\4.png" LogicalName="num-4" />
+    <EmbeddedResource Include="numbers\5.png" LogicalName="num-5" />
+    <EmbeddedResource Include="numbers\6.png" LogicalName="num-6" />
+    <EmbeddedResource Include="numbers\7.png" LogicalName="num-7" />
+    <EmbeddedResource Include="numbers\8.png" LogicalName="num-8" />
+    <EmbeddedResource Include="numbers\9.png" LogicalName="num-9" />    
+    <EmbeddedResource Include="numbers\sep.png" LogicalName="num-sep" />
+  </ItemGroup>
+
+</Project>
