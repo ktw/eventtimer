@@ -37,10 +37,15 @@ namespace EventTimer
                     var msg = new ContinueLastDialog();
                     msg.Response += async (s, e) => {
                         if (e.ResponseId == ResponseType.Yes)
-                            await Task.Delay(10).ContinueWith(t=> Start());
+                        {
+                            await Task.Delay(10);
+                            Start();
+                        }
                         else
+                        {
                             _settings.StartAt = null;
                             await _settings.Save();
+                        }
                     };
                     msg.Run();
                     msg.Destroy();
